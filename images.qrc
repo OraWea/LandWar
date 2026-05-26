@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/back">
+        <file>images/headimage.jpg</file>
+        <file>images/background.jpg</file>
+        <file>images/Fight_back1.jpg</file>
+    </qresource>
+    <qresource prefix="/block">
+        <file>images/block/core.jpg</file>
+        <file>images/block/medium_fly.jpg</file>
+        <file>images/block/sand.jpg</file>
+        <file>images/block/bomb1_right.jpg</file>
+        <file>images/block/medium_fire_right.jpg</file>
+        <file>images/block/bomb1_left.jpg</file>
+        <file>images/block/medium_fire_left.jpg</file>
+    </qresource>
+</RCC>
