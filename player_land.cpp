@@ -33,12 +33,22 @@ void Player_Land::setHoleGram(){
     setGram(temp_gram);
 }
 void Player_Land::setHoleHp(){
-    float temp_hp=0;
+    int temp_hp=0;
     for(auto& block:blocks){
         temp_hp+=block.second.gethp();
     }
-    setGram(temp_hp);
+    sethp(temp_hp); // 修复: 原来误用了setGram(temp_hp)
 }//计算整个岛屿的属性
+
+QVector2D Player_Land::getCenter() const {
+    if(blocks.empty()) return QVector2D(0.0f, 0.0f);
+    float x = 0, y = 0;
+    for(const auto& block : blocks){
+        x += block.first.x();
+        y += block.first.y();
+    }
+    return QVector2D(x / (float)blocks.size(), y / (float)blocks.size());
+}// 返回岛屿中心坐标
 
 void Player_Land::draw(QPainter* painter){
     for(auto& block:blocks){
