@@ -22,8 +22,9 @@ void Manager::fire_update(){//更新炮弹的函数
         if(bomb.first.x()>1640){
             bombs.erase(bombs.begin()+i);
         }
-        if(bomb.first.x()<0)
-            bomb.first.setX(1600);
+        if(bomb.first.x()<0){
+            bombs.erase(bombs.begin()+i); // 修复: 向左炮弹飞出屏幕时删除(原来是错误回绕)
+        }
         if(bomb.first.x()<750&&bomb.first.x()>600&&bomb.second.type()==25){
             bombs.erase(bombs.begin()+i);}//当炮弹位置超过范围时删除
         if(bomb.second.gethp()<=0){

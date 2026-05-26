@@ -28,6 +28,7 @@ public:
     float getenemy_hard(){return enemy_hard;}
     void setdown_speed(float down_speed){this->down_speed=down_speed;}
     float getdown_speed(){return down_speed;}//各类setter和getter
+    QVector2D getCenter() const;  // 返回岛屿所有方块的几何中心坐标
     void setdown_dpeed();
     void setFlySpeed();
     void setHoleGram();
@@ -40,7 +41,7 @@ public:
     Manager* m;
     QPair<QVector2D,weapons*> player_weapons[5];
 private:
-    float enemy_hard;
+    float enemy_hard = 1.0f;  // 敌方难度系数，默认1.0
     float energy_costspeed=-10;
     float weaponscold[6];
     float down_speed=0;
